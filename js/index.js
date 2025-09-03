@@ -1,56 +1,22 @@
 const startScreen = document.getElementById("start-screen");
-    const startBtn = document.getElementById("start-btn");
-    const quizContainer = document.getElementById("quiz-container");
-    const questionEl = document.getElementById("question");
-    const optionsEl = document.getElementById("options");
-    const backBtn = document.getElementById("back");
-    const nextBtn = document.getElementById("next");
-    const resultEl = document.getElementById("result");
-    const timerEl = document.getElementById("timer");
+const startBtn = document.getElementById("start-btn");
+const quizContainer = document.getElementById("quiz-container");
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const backBtn = document.getElementById("back");
+const nextBtn = document.getElementById("next");
+const resultEl = document.getElementById("result");
+const ExamEl = document.getElementById("result");
+const timerEl = document.getElementById("timer");
 
-    let currentQuestion = 0;
-    let score = 0;
-    let timer;
-    let timeLeft = 40 * 60;
-    let selectedAnswers = {};
-    let wrongAnswers = [];
+let currentQuestion = 0;
+let score = 0;
+let timer;
+let timeLeft = 40 * 60;
+let selectedAnswers = {};
+let wrongAnswers = [];
 
-    // Questions Array (JS + HTML + CSS)
-    // const questions = [
-    //   { question: "Which keyword can declare a variable?", options: ["var", "let", "const", "All of these"], answer: "All of these" },
-    //   { question: "Add to the END of an array:", options: ["push()", "pop()", "shift()", "slice()"], answer: "push()" },
-    //   { question: "Remove the LAST item of an array:", options: ["pop()", "unshift()", "splice()", "map()"], answer: "pop()" },
-    //   { question: "DOM stands for:", options: ["Document Object Model", "Data Object Map", "Doc Order Model", "Display Object Model"], answer: "Document Object Model" },
-    //   { question: "Write a single-line comment:", options: ["// comment", "/* comment */", "# comment", "<!-- comment -->"], answer: "// comment" },
-    //   { question: "Strict equality operator is:", options: ["==", "===", "!=", "="], answer: "===" },
-    //   { question: "Turn a string into an array:", options: ["split()", "join()", "slice()", "toArray()"], answer: "split()" },
-    //   { question: "Turn an array into a string:", options: ["join()", "split()", "map()", "reduce()"], answer: "join()" },
-    //   { question: "How to pick by ID in DOM:", options: ["getElementById()", "getElementsByClassName()", "querySelectorAll()", "createElement()"], answer: "getElementById()" },
-    //   { question: "Which adds a class to an element?", options: [".classList.add()", ".style.add()", ".addClass()", ".setAttribute()"], answer: ".classList.add()" },
-    //   { question: "if/else checks a:", options: ["loop", "condition", "function", "style"], answer: "condition" },
-    //   { question: "Repeat code a set number of times:", options: ["for loop", "if/else", "function", "querySelector"], answer: "for loop" },
-    //   { question: "Check if array contains a value:", options: ["includes()", "indexOf()", "has()", "contains()"], answer: "includes()" },
-    //   { question: "Which shows a popup message?", options: ["alert()", "console.log()", "prompt()", "print()"], answer: "alert()" },
-    //   { question: "Access object property safely:", options: ["obj.age", "obj['age']", "Both work", "Neither"], answer: "Both work" },
-    //   { question: "Which creates a DOM element?", options: ["createElement()", "append()", "innerHTML()", "makeElement()"], answer: "createElement()" },
-    //   { question: "Function keyword is:", options: ["function", "func", "def", "=> only"], answer: "function" },
-    //   { question: "While loop runs until:", options: ["condition becomes false", "page reloads", "timer ends", "user clicks"], answer: "condition becomes false" },
-    //   { question: "Change text inside an element:", options: ["textContent", "innerHTML", "Both", "style"], answer: "Both" },
-    //   { question: "Array length is found with:", options: [".size", ".count()", ".length", ".total"], answer: ".length" },
-    //   { question: "What does HTML stand for?", options: ["HighText Machine Language", "HyperText Markup Language", "HyperTool Machine Language", "Home Tool Markup Language"], answer: "HyperText Markup Language" },
-    //   { question: "Which of these is the correct HTML tag for a paragraph?", options: ["<para>", "<p>", "<paragraph>", "<pg>"], answer: "<p>" },
-    //   { question: "Which of these is an attribute in HTML?", options: ["<h1>", 'src="image.jpg"', "<p>", "<ul>"], answer: 'src="image.jpg"' },
-    //   { question: "What is the correct file extension for an HTML document?", options: [".htm", ".html", ".web", ".css"], answer: ".html" },
-    //   { question: "Which HTML tag is used to insert an image?", options: ["<pic>", "<image>", "<img>", "<src>"], answer: "<img>" },
-    //   { question: "Which CSS property is used to change the background color of a webpage?", options: ["color", "background-color", "bgcolor", "text-color"], answer: "background-color" },
-    //   { question: "Which CSS property is used to make an image circular?", options: ["border-size", "border-radius", "circle", "image-shape"], answer: "border-radius" },
-    //   { question: "Which type of CSS is written directly inside an HTML tag?", options: ["Inline CSS", "Internal CSS", "External CSS", "None of the above"], answer: "Inline CSS" },
-    //   { question: "Which of the following is a CSS display type?", options: ["Static", "Inline", "Fixed", "All of the above"], answer: "Inline" },
-    //   { question: "What does the <form> tag do in HTML?", options: ["It makes text bold", "It creates a clickable button", "It collects user input", "It links to another page"], answer: "It collects user input" }
-    // ];
-
-
-    // JAVASCRIPT QUESTIONS (25 NEW)
+// ---- Python & Pygame Quiz Questions ----
 const questions = [
   {
     question: "What does HTML stand for?",
@@ -89,11 +55,6 @@ const questions = [
     answer: "<p>",
   },
   {
-    question: "Which tag draws a breaks line?",
-    options: ["<line>", "<hr>", "<border>", "<br>"],
-    answer: "<br>",
-  },
-  {
     question: "Which attribute is used in <a> tag to specify a link?",
     options: ["src", "href", "link", "url"],
     answer: "href",
@@ -112,11 +73,6 @@ const questions = [
     question: "Which input type creates a radio button?",
     options: ["radio", "button", "checkbox", "select"],
     answer: "radio",
-  },
-  {
-    question: "Which HTML element is used for dropdown menus?",
-    options: ["<select>", "<option>", "<dropdown>", "<list>"],
-    answer: "<select>",
   },
   {
     question: "Which tag is used to create options inside <select>?",
@@ -346,103 +302,125 @@ const questions = [
   },
 ];
 
+// Fisher-Yates shuffle
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
+// Start Quiz
+startBtn.addEventListener("click", () => {
+  startScreen.style.display = "none";
+  quizContainer.style.display = "block";
 
+  shuffle(questions); // randomize questions
 
-    // Start Quiz
-    startBtn.addEventListener("click", () => {
-      startScreen.style.display = "none";
-      quizContainer.style.display = "block";
-      startTimer();
-      loadQuestion(currentQuestion);
-    });
+  startTimer();
+  loadQuestion(currentQuestion);
+});
 
-    // Load Question
-    function loadQuestion(index) {
-      let q = questions[index];
-      questionEl.textContent = `${index + 1}. ${q.question}`;
-      optionsEl.innerHTML = "";
+// Load Question
+function loadQuestion(index) {
+  let q = questions[index];
+  questionEl.textContent = `${index + 1}. ${q.question}`;
+  optionsEl.innerHTML = "";
 
-      q.options.forEach(option => {
-        let btn = document.createElement("button");
-        btn.textContent = option;
-        btn.classList.add("option-btn");
+  // randomize answer options too
+  let shuffledOptions = [...q.options];
+  shuffle(shuffledOptions);
 
-        if (selectedAnswers[index] === option) {
-          btn.classList.add("selected");
-        }
+  shuffledOptions.forEach(option => {
+    let btn = document.createElement("button");
+    btn.textContent = option;
+    btn.classList.add("option-btn");
 
-        btn.addEventListener("click", () => selectAnswer(index, option, btn));
-        optionsEl.appendChild(btn);
-      });
-    }
-
-    // Select Answer
-    function selectAnswer(qIndex, answer, btn) {
-      selectedAnswers[qIndex] = answer;
-      Array.from(optionsEl.children).forEach(b => b.classList.remove("selected"));
+    if (selectedAnswers[index] === option) {
       btn.classList.add("selected");
     }
 
-    // Next Button
-    nextBtn.addEventListener("click", () => {
-      if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
-        loadQuestion(currentQuestion);
-      } else {
-        endQuiz();
-      }
-    });
+    btn.addEventListener("click", () => selectAnswer(index, option, btn));
+    optionsEl.appendChild(btn);
+  });
+}
 
-    // Back Button
-    backBtn.addEventListener("click", () => {
-      if (currentQuestion > 0) {
-        currentQuestion--;
-        loadQuestion(currentQuestion);
-      }
-    });
+// Select Answer
+function selectAnswer(qIndex, answer, btn) {
+  selectedAnswers[qIndex] = answer;
+  Array.from(optionsEl.children).forEach(b => b.classList.remove("selected"));
+  btn.classList.add("selected");
+}
 
-    // Timer
-    function startTimer() {
-      timer = setInterval(() => {
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
-        timerEl.textContent = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
-        timeLeft--;
+// Next Button
+nextBtn.addEventListener("click", () => {
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    loadQuestion(currentQuestion);
+  } else {
+    endQuiz();
+  }
+});
 
-        if (timeLeft < 0) {
-          clearInterval(timer);
-          endQuiz();
-        }
-      }, 1000);
-    }
+// Back Button
+backBtn.addEventListener("click", () => {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    loadQuestion(currentQuestion);
+  }
+});
 
-    // End Quiz
-    function endQuiz() {
+// Timer
+function startTimer() {
+  timer = setInterval(() => {
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+    timerEl.textContent = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+    timeLeft--;
+
+    if (timeLeft < 0) {
       clearInterval(timer);
-      quizContainer.style.display = "none";
-
-      score = 0;
-      wrongAnswers = [];
-
-      questions.forEach((q, i) => {
-        if (selectedAnswers[i] === q.answer) {
-          score++;
-        } else {
-          wrongAnswers.push({ question: q.question, correct: q.answer, chosen: selectedAnswers[i] });
-        }
-      });
-
-      resultEl.innerHTML = `<h2>Your Score: ${score}/${questions.length}</h2>`;
-
-      if (wrongAnswers.length > 0) {
-        resultEl.innerHTML += "<h3>Questions you missed:</h3><ul>";
-        wrongAnswers.forEach(w => {
-          resultEl.innerHTML += `<li>${w.question}<br>Correct Answer: ${w.correct} | Your Answer: ${w.chosen || "No Answer"}</li>`;
-        });
-        resultEl.innerHTML += "</ul>";
-      }
-
-      resultEl.innerHTML += `<button onclick="location.reload()">Restart Quiz</button>`;
-      resultEl.style.display = "block";
+      endQuiz();
     }
+  }, 1000);
+}
+
+// End Quiz
+function endQuiz() {
+  clearInterval(timer);
+  quizContainer.style.display = "none";
+
+  score = 0;
+  wrongAnswers = [];
+
+  questions.forEach((q, i) => {
+    if (selectedAnswers[i] === q.answer) {
+      score++;
+    } else {
+      wrongAnswers.push({ question: q.question, correct: q.answer, chosen: selectedAnswers[i] });
+    }
+  });
+
+  let percentage = ((score / questions.length) * 100).toFixed(2);
+
+  resultEl.innerHTML = `
+    <h3>You scored: ${score} out of ${questions.length}</h3>
+    <h2>${percentage}%</h2>
+  `;
+
+  if (wrongAnswers.length > 0) {
+    resultEl.innerHTML += "<h3>Review Your Mistakes:</h3>";
+    wrongAnswers.forEach(w => {
+      resultEl.innerHTML += `
+        <div class="correction-card">
+          <p class="question"><strong>Q:</strong> ${w.question}</p>
+          <p class="correct"><strong>✔ Correct Answer:</strong> ${w.correct}</p>
+          <p class="chosen"><strong>✘ Your Answer:</strong> ${w.chosen || "No Answer"}</p>
+        </div>
+      `;
+    });
+  }
+
+  
+  resultEl.style.display = "block";
+}
