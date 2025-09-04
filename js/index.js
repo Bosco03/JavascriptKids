@@ -30,28 +30,28 @@ const questions = [
   },
   {
     question: "Which tag is used for the largest heading?",
-    options: ["<h1>", "<h6>", "<p>", "<head>"],
+    options: ["h1", "h6", "p", "head"],
     answer: "h1",
   },
   {
     question: "Which tag is used to display an image?",
-    options: ["<img>", "<image>", "<pic>", "<src>"],
+    options: ["img", "image", "pic", "<src>"],
     answer: "img",
   },
 
   {
     question: "Which tag creates a bullet list?",
-    options: ["<ul>", "<ol>", "<li>", "<br>"],
+    options: ["ul", "ol", "li", "br"],
     answer: "ul",
   },
   {
     question: "Which tag is used for a line break?",
-    options: ["<break>", "<lb>", "<br>", "<hr>"],
-    answer: "<br>",
+    options: ["break", "<lb>", "br", "<hr>"],
+    answer: "br",
   },
   {
     question: "Which tag creates a new paragraph?",
-    options: ["<p>", "<h2>", "<para>", "<div>"],
+    options: ["p", "<h2>", "para", "div"],
     answer: "p",
   },
   {
@@ -62,7 +62,7 @@ const questions = [
   {
     question: "Which HTML element is used for forms?",
     options: ["<input>", "<form>", "<button>", "<fieldset>"],
-    answer: "form",
+    answer: "<form>",
   },
   {
     question: "Which input type creates a checkbox?",
@@ -75,8 +75,8 @@ const questions = [
     answer: "radio",
   },
   {
-    question: "Which tag is used to create options inside <select>?",
-    options: ["<list>", "<group>", "<option>", "<optgroup>"],
+    question: "Which tag is used to create options?",
+    options: ["list", "group", "option", "optgroup"],
     answer: "option",
   },
 
@@ -87,7 +87,7 @@ const questions = [
   },
   {
     question: "Which tag is used to display a numbered list?",
-    options: ["<ul>", "<li>", "<ol>", "<dl>"],
+    options: ["ul", "li", "ol", "dl"],
     answer: "ol",
   },
   {
@@ -97,12 +97,12 @@ const questions = [
   },
   {
     question: "Which tag creates a hyperlink?",
-    options: ["<a>", "<link>", "<href>", "<url>"],
+    options: ["a", "<link>", "href", "url"],
     answer: "a",
   },
   {
     question: "Which tag is used for a drop-down list?",
-    options: ["<dropdown>", "<select>", "<list>", "<menu>"],
+    options: ["<dropdown>", "select", "list", "<menu>"],
     answer: "select",
   },
   {
@@ -113,9 +113,9 @@ const questions = [
   {
     question: "Which tag represents a checkbox?",
     options: [
-      "<input type='check'>",
-      "<input type='checkbox'>",
-      "<check>",
+      "input type='check'",
+      "input type='checkbox'",
+      "check",
       "<tick>",
     ],
     answer: "input type='checkbox'",
@@ -127,7 +127,7 @@ const questions = [
   },
   {
     question: "Which tag defines a list item?",
-    options: ["<ul>", "<ol>", "<li>", "<list>"],
+    options: ["ul", "ol", "li", "list"],
     answer: "li",
   },
   {
@@ -195,7 +195,7 @@ const questions = [
     options: [
       "relative",
       "fixed",
-      "sticky ",
+      "sticky",
       "absolute",
     ],
     answer: "sticky",
