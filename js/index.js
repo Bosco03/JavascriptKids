@@ -31,18 +31,18 @@ const questions = [
   {
     question: "Which tag is used for the largest heading?",
     options: ["<h1>", "<h6>", "<p>", "<head>"],
-    answer: "<h1>",
+    answer: "h1",
   },
   {
     question: "Which tag is used to display an image?",
     options: ["<img>", "<image>", "<pic>", "<src>"],
-    answer: "<img>",
+    answer: "img",
   },
 
   {
     question: "Which tag creates a bullet list?",
     options: ["<ul>", "<ol>", "<li>", "<br>"],
-    answer: "<ul>",
+    answer: "ul",
   },
   {
     question: "Which tag is used for a line break?",
@@ -52,7 +52,7 @@ const questions = [
   {
     question: "Which tag creates a new paragraph?",
     options: ["<p>", "<h2>", "<para>", "<div>"],
-    answer: "<p>",
+    answer: "p",
   },
   {
     question: "Which attribute is used in <a> tag to specify a link?",
@@ -62,7 +62,7 @@ const questions = [
   {
     question: "Which HTML element is used for forms?",
     options: ["<input>", "<form>", "<button>", "<fieldset>"],
-    answer: "<form>",
+    answer: "form",
   },
   {
     question: "Which input type creates a checkbox?",
@@ -77,7 +77,7 @@ const questions = [
   {
     question: "Which tag is used to create options inside <select>?",
     options: ["<list>", "<group>", "<option>", "<optgroup>"],
-    answer: "<option>",
+    answer: "option",
   },
 
   {
@@ -88,7 +88,7 @@ const questions = [
   {
     question: "Which tag is used to display a numbered list?",
     options: ["<ul>", "<li>", "<ol>", "<dl>"],
-    answer: "<ol>",
+    answer: "ol",
   },
   {
     question: "Which attribute sets alternative text for images?",
@@ -98,12 +98,12 @@ const questions = [
   {
     question: "Which tag creates a hyperlink?",
     options: ["<a>", "<link>", "<href>", "<url>"],
-    answer: "<a>",
+    answer: "a",
   },
   {
     question: "Which tag is used for a drop-down list?",
     options: ["<dropdown>", "<select>", "<list>", "<menu>"],
-    answer: "<select>",
+    answer: "select",
   },
   {
     question: "Which attribute specifies inline CSS?",
@@ -118,7 +118,7 @@ const questions = [
       "<check>",
       "<tick>",
     ],
-    answer: "<input type='checkbox'>",
+    answer: "input type='checkbox'",
   },
   {
     question: "Which attribute gives a unique name to an element?",
@@ -128,7 +128,7 @@ const questions = [
   {
     question: "Which tag defines a list item?",
     options: ["<ul>", "<ol>", "<li>", "<list>"],
-    answer: "<li>",
+    answer: "li",
   },
   {
     question: "What does CSS stand for?",
@@ -156,9 +156,9 @@ const questions = [
     answer: "background-color",
   },
   {
-    question: "Which CSS property makes text bold?",
-    options: ["font-weight", "font-style", "text-bold", "weight"],
-    answer: "font-weight",
+    question: "Which CSS property puts  elements side by side?",
+    options: ["block", "flex", "inline", "none"],
+    answer: "inline",
   },
   {
     question: "Which property changes text size?",
@@ -166,9 +166,9 @@ const questions = [
     answer: "font-size",
   },
   {
-    question: "Which property centers text?",
-    options: ["align", "text-align", "center", "text-style"],
-    answer: "text-align",
+    question: "Which property controls if element are shown in inline or block?",
+    options: ["float", "display", "visibiity", "position"],
+    answer: "display",
   },
   {
     question: "Which property adds space inside an element?",
@@ -191,14 +191,14 @@ const questions = [
     answer: "border-radius",
   },
   {
-    question: "Which property hides an element?",
+    question: "Which property make an element stay at the top when scrolling?",
     options: [
-      "display: none",
-      "hidden: true",
-      "visibility: ",
-      "Both A and C",
+      "relative",
+      "fixed",
+      "sticky ",
+      "absolute",
     ],
-    answer: "display: none",
+    answer: "sticky",
   },
   {
     question: "Which property changes the width of an element?",
@@ -206,14 +206,14 @@ const questions = [
     answer: "width",
   },
   {
-    question: "Which property changes the height of an element?",
-    options: ["size", "height", "element-height", "box-size"],
-    answer: "height",
+    question: "Which function is used to delete on the calculator?",
+    options: ["del", "trim", "slice", "spit"],
+    answer: "slice",
   },
   {
-    question: "Which data type is written inside quotes?",
-    options: ["String", "Number", "Boolean", "Array"],
-    answer: "String",
+    question: "Which function is used to spacing on the calculator?",
+    options: ["del", "trim", "slice", "spit"],
+    answer: "trim",
   },
   {
     question: "Which data type is written without quotes?",
@@ -241,9 +241,9 @@ const questions = [
     answer: "'52'",
   },
   {
-    question: "What is the result of 5 - '2' in JavaScript?",
-    options: ["7", "3", "'52'", "Error"],
-    answer: "3",
+    question: "which method selects all elements with the same class?",
+    options: ["querySelect()", "getElementById()", "querySelectAll()", "getAllElement()"],
+    answer: "querySelectAll()",
   },
   {
     question: "Which keyword shows a message box?",
